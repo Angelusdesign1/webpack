@@ -535,7 +535,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 				clearTimeout(timeout);
 /******/ 				var doneFns = inProgress[url];
 /******/ 				delete inProgress[url];
-/******/ 				script.parentNode.removeChild(script);
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
 /******/ 				doneFns && doneFns.forEach((fn) => fn(event));
 /******/ 			}
 /******/ 			;
@@ -1135,7 +1135,7 @@ __webpack_require__.d(exports, {
 /******/ 				clearTimeout(timeout);
 /******/ 				var doneFns = inProgress[url];
 /******/ 				delete inProgress[url];
-/******/ 				script.parentNode.removeChild(script);
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
 /******/ 				doneFns && doneFns.forEach((fn) => fn(event));
 /******/ 			}
 /******/ 			;
@@ -1665,7 +1665,7 @@ __webpack_require__.d(exports, {
 /******/ 				clearTimeout(timeout);
 /******/ 				var doneFns = inProgress[url];
 /******/ 				delete inProgress[url];
-/******/ 				script.parentNode.removeChild(script);
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
 /******/ 				doneFns && doneFns.forEach((fn) => fn(event));
 /******/ 			}
 /******/ 			;
@@ -2034,7 +2034,7 @@ Child app:
     node_modules_react_index_js-_11191.js  10.2 KiB  [emitted]
                       src_bootstrap_js.js   157 KiB  [emitted]
     Entrypoint app = app.js
-    chunk app.js (app) 669 bytes (javascript) 42 bytes (share-init) 18.6 KiB (runtime) [entry] [rendered]
+    chunk app.js (app) 669 bytes (javascript) 42 bytes (share-init) 18.7 KiB (runtime) [entry] [rendered]
         > ./src/index.js app
      ./src/index.js 585 bytes [built]
      external "mfeBBB@/dist/bbb/mfeBBB.js" 42 bytes [built]
@@ -2060,7 +2060,7 @@ Child app:
 Child mfe-b:
     Hash: 0a1b2c3d4e5f6a7b8c9d
                                             Asset      Size
-                                        mfeBBB.js  24.2 KiB  [emitted]  [name: mfeBBB]
+                                        mfeBBB.js  24.3 KiB  [emitted]  [name: mfeBBB]
                    node_modules_react_index_js.js  12.6 KiB  [emitted]
                             src-b_Component_js.js  2.26 KiB  [emitted]
     vendors-node_modules_date-fns_esm_index_js.js   797 KiB  [emitted]  [id hint: vendors]
@@ -2132,7 +2132,7 @@ Version: webpack 5.0.0-beta.20
 Child app:
     Hash: 0a1b2c3d4e5f6a7b8c9d
                                                 Asset       Size
-                                               app.js   6.96 KiB  [emitted]  [name: app]
+                                               app.js   6.98 KiB  [emitted]  [name: app]
                 node_modules_react_index_js-_11190.js   7.26 KiB  [emitted]
     node_modules_react_index_js-_11190.js.LICENSE.txt  295 bytes  [emitted]
                 node_modules_react_index_js-_11191.js   6.31 KiB  [emitted]
@@ -2166,7 +2166,7 @@ Child app:
 Child mfe-b:
     Hash: 0a1b2c3d4e5f6a7b8c9d
                                             Asset       Size
-                                        mfeBBB.js   5.63 KiB  [emitted]  [name: mfeBBB]
+                                        mfeBBB.js   5.64 KiB  [emitted]  [name: mfeBBB]
                    node_modules_react_index_js.js   7.21 KiB  [emitted]
        node_modules_react_index_js.js.LICENSE.txt  295 bytes  [emitted]
                             src-b_Component_js.js  493 bytes  [emitted]
@@ -2194,7 +2194,7 @@ Child mfe-b:
 Child mfe-c:
     Hash: 0a1b2c3d4e5f6a7b8c9d
                                             Asset       Size
-                                        mfeCCC.js   6.28 KiB  [emitted]  [name: mfeCCC]
+                                        mfeCCC.js   6.29 KiB  [emitted]  [name: mfeCCC]
                  node_modules_lodash_random_js.js   2.95 KiB  [emitted]
                             src-c_Component_js.js  493 bytes  [emitted]
                         src-c_LazyComponent_js.js  537 bytes  [emitted]
